@@ -13,7 +13,7 @@ namespace BattleShip
         //string rowA[];
         //string rowB[];
         public string[,] gameBoard;
-        public Player player;
+      
 
 
 
@@ -25,17 +25,18 @@ namespace BattleShip
         //Constructor (BUILDS OBJECT)
         public Board()
         {
-            gameBoard = new string [21, 21];
+            gameBoard = new string[21, 21];
 
-            for (int i = 0; i < gameBoard.GetUpperBound(0); i++)
-            {
-                for (int j = 0; j < gameBoard.GetUpperBound(1); j++)
+                for (int i = 0; i < gameBoard.GetUpperBound(0); i++)
                 {
-                    gameBoard[i, j] = "O";
+                    for (int j = 0; j < gameBoard.GetUpperBound(1); j++)
+                    {
+                        gameBoard[i, j] = "O";
+                    }
                 }
-            }
 
-            player = new Player();
+        }
+            
 
             //List<List<string>> l = new List<List<string>>();
 
@@ -46,7 +47,7 @@ namespace BattleShip
             //    l.Add(a);
 
             //}
-        }
+        
 
 
         //member methods(CAN DO)
@@ -66,6 +67,7 @@ namespace BattleShip
             } 
         }
 
+        
 
 
 

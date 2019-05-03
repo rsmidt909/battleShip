@@ -10,10 +10,13 @@ namespace BattleShip
     {
         static void Main(string[] args)
         {
-            Board board = new Board();
-            board.ShowBoard();  
+            Game g = new Game();
+            //g.player.board.ShowBoard();
             Console.ReadLine();
-            board.player.Change();
+            g.player.Place();
+            g.player.attackBoard.ShowBoard();
+            Console.ReadLine();
+
         }
     }
 }

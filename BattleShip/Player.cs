@@ -11,10 +11,12 @@ namespace BattleShip
 
         //member variables (HAS A)
 
-        Board board;
-
-
-
+        
+        public Board attackBoard;
+        public Board placeBoard;
+        string response;
+        int x;
+        int y;
 
 
 
@@ -23,7 +25,11 @@ namespace BattleShip
 
         public Player()
         {
-            board = new Board();
+            attackBoard = new Board();
+            placeBoard = new Board();
+            response = null;
+            x = 0;
+            y = 0;
         }
 
 
@@ -34,11 +40,24 @@ namespace BattleShip
 
         public void Change()
         {
-             board.gameBoard[2, 4] = "S";
+             attackBoard.gameBoard[14, 14] = "S";
+            
+        }
+
+        public void Place()
+        {
+            Console.WriteLine("Place your Submarine");
+            response = Console.ReadLine();
+            x = int.Parse(response);
+            Console.WriteLine("Place your Submarine");
+            y = int.Parse(response);
+            placeBoard.gameBoard[x, y] = "S";
+            placeBoard.gameBoard[x, y - 1] = "S";
+            placeBoard.gameBoard[x, y + 1] = "S";
         }
 
 
-        
+
 
 
 
